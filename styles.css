@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  background-color: rgba(0, 0, 0, 1);
+}
+h1 {
+  color: #fff;
+  text-align: center;
+  font-style: italic;
+}
+
+section.cal {
+  width: 45%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 1);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(55px, 1fr));
+  grid-gap: 5px;
+  padding: 20px 25px;
+}
+
+section.cal > div {
+  user-select: none;
+  font-weight: 600;
+  background-color: #333;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 10px;
+  height: 55px;
+}
+section.cal > div.display {
+  padding-right: 20px;
+  justify-content: flex-end;
+  cursor: default;
+  grid-column: 1/ 4;
+  font-size: 2.5rem;
+  color: #000;
+  background-color: #fff;
+}
+section.cal > div[data-info="0"] {
+  grid-column: 1/3;
+}
+section.cal > div:nth-of-type(17),
+section.cal > div:nth-of-type(4n + 2) {
+  background-color: orange;
+}
+section.cal > div.focused {
+  filter: contrast(105%) brightness(70%);
+}
